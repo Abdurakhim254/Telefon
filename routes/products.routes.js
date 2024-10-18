@@ -1,6 +1,6 @@
 import express from 'express'
 import { validationProductmidd } from '../middlewares/index.js'
-import { getAllproducts, getbyidProduct, updaTeProductsbyId, createProduct } from '../controlllers/index.js'
+import { getAllproducts, getbyidProduct, updaTeProductsbyId, createProduct, deleTeProductsbyId } from '../controlllers/index.js'
 export const productsRouter = express.Router()
 
 //GET all
@@ -16,4 +16,4 @@ productsRouter.post("/", validationProductmidd, createProduct)
 productsRouter.put("/:id", updaTeProductsbyId)
 
 //delete by id
-// productsRouter.delete("/")
+productsRouter.delete("/:id",deleTeProductsbyId)

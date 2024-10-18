@@ -58,3 +58,15 @@ export const updaTeProductsbyId = (req, res, next) => {
         next(error)
     }
 }
+
+export const deleTeProductsbyId=(req,res,next)=>{
+    try {
+        const data=JSON.parse(fileread())
+        const id=req.params.id
+        const newdata=data.filter((item)=>item.id!==+id)
+        writefile(newdata)
+        return res.send("Malumot o'chirildi")
+    } catch (error) {
+        next(error)
+    }
+}

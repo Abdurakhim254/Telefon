@@ -1,1 +1,20 @@
-[{"id":2,"model":"Iphone 14","price":545455544,"company":"Apple"},{"model":"Iphone 16","price":545455544548,"company":"Apple","id":1},{"id":3,"model":"Samsung s24 ultra ","price":545455544548,"company":"Samsung"},{"id":4,"model":"Samsung s24  ","price":5454578748,"company":"Samsung"}]
+[
+    {
+        "id": 1,
+        "model": "Iphone 16",
+        "price": 545455544548,
+        "company": "Apple"
+    },
+    {
+        "id": 3,
+        "model": "Samsung s24 ultra ",
+        "price": 545455544548,
+        "company": "Samsung"
+    },
+    {
+        "id": 4,
+        "model": "Samsung s24  ",
+        "price": 5454578748,
+        "company": "Samsung"
+    }
+]
