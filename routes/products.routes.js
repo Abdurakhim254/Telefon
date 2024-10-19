@@ -1,5 +1,5 @@
 import express from 'express'
-import { validationProductmidd } from '../middlewares/index.js'
+import { validationProductmidd,checkbeforeupdate } from '../middlewares/index.js'
 import { getAllproducts, getbyidProduct, updaTeProductsbyId, createProduct, deleTeProductsbyId } from '../controlllers/index.js'
 export const productsRouter = express.Router()
 
@@ -13,7 +13,7 @@ productsRouter.get("/:id", getbyidProduct)
 productsRouter.post("/", validationProductmidd, createProduct)
 
 //Update by id
-productsRouter.put("/:id", updaTeProductsbyId)
+productsRouter.put("/:id",checkbeforeupdate, updaTeProductsbyId)
 
 //delete by id
 productsRouter.delete("/:id",deleTeProductsbyId)

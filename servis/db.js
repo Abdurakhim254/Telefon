@@ -1,7 +1,8 @@
 import fs from 'fs'
 import path from 'path'
 const filepath = path.join(import.meta.dirname, "..", "database", "data.json")
-// console.log(filepath)
+
+
 export const fileread = () => {
     try {
         const data = fs.readFileSync(filepath, 'utf8')

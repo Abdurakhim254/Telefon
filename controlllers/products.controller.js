@@ -1,8 +1,54 @@
 import { fileread, writefile } from "../servis/index.js"
+function createpagindata(data,page,limit){
+    let paginatedata=data.slice((page-1)*limit,limit)
+    return paginatedata
+  }
+  function getsorttoasc(data){
+    for(let i=0;i<data.length;i++){
+        for(let j=i+1;j<data.length-1;j++){
+            if(data[i].price>data[j].price){
+                let temp=data[i]
+                data[i]=data[j]
+                data[j]=temp
+            }
+        }
+    }
+    return data
+  }
+  function getsorttodesc(data){
+    for(let i=0;i<data.length;i++){
+        for(let j=i+1;j<data.length-1;j++){
+            if(data[i].price<data[j].price){
+                let temp=data[i]
+                data[i]=data[j]
+                data[j]=temp
+            }
+        }
+    }
+    return data
+  }
 export const getAllproducts = (req, res, next) => {
     try {
+        let{page,limit,model,sort}=req.query
         const data =fileread()
-        return res.send(JSON.parse(data))
+        let productData = JSON.parse(data);
+        if(sort==='ORDER BY ASC'){
+            let res=getsorttoasc(productData)
+            let filter=res.filter((item)=>item.model.toLowerCase()===model.toLowerCase())
+            return res.status(200).send({
+                data: createpagindata(filter,page,limit),
+              });
+        }else if(sort==='ORDER BY DESC'){
+            let res=getsorttodesc(productData)
+            let filter=res.filter((item)=>item.model.toLowerCase()===model.toLowerCase())
+            return res.status(200).send({
+                data:createpagindata(filter,page,limit),
+              });
+        }else{
+            return res.status(200).send({
+                data: createpagindata(productData,page,limit),
+              });
+        }
     } catch (e) {
         next(e)
     }
