@@ -12,8 +12,45 @@
         "company": "Samsung"
     },
     {
+        "id": 4,
         "model": "Redmi note 13 pro  ",
         "price": 5454578748,
-        "id": 4
+        "company":"Xiaomi"
+    },
+    {
+        "id": 5,
+        "model": "OnePlus 12",
+        "price": 89999,
+        "company": "OnePlus"
+    },
+    {
+        "id": 6,
+        "model": "Oppo Find X7 Pro",
+        "price": 139999,
+        "company": "Oppo"
+    },
+    {
+        "id": 7,
+        "model": "Sony Xperia 2 II",
+        "price": 119999,
+        "company": "Sony"
+    },
+    {
+        "id": 8,
+        "model": "Motorola Edge 40 Pro",
+        "price": 84999,
+        "company": "Motorola"
+    },
+    {
+        "id": 9,
+        "model": "Realme GT Neo 5",
+        "price": 79999,
+        "company": "Realme"
+    },
+    {
+        "id": 10,
+        "model": "Vivo X100 Pro",
+        "price": 129999,
+        "company": "Vivo"
     }
 ]
